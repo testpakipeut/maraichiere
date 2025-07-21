@@ -640,7 +640,7 @@ header, footer, section {
 
 /* Transition douce pour le filtrage des produits */
 .produit {
-    transition: opacity 0.35s cubic-bezier(.4,0,.2,1), transform 0.35s cubic-bezier(.4,0,.2,1);
+    transition: opacity 1.5s cubic-bezier(.4,0,.2,1), transform 1.5s cubic-bezier(.4,0,.2,1);
     opacity: 1;
     transform: scale(1);
 }
@@ -648,5 +648,5 @@ header, footer, section {
     opacity: 0;
     pointer-events: none;
     transform: scale(0.97);
-    transition: opacity 0.25s cubic-bezier(.4,0,.2,1), transform 0.25s cubic-bezier(.4,0,.2,1);
+    transition: opacity 1.5s cubic-bezier(.4,0,.2,1), transform 1.5s cubic-bezier(.4,0,.2,1);
 }

@@ -38,7 +38,7 @@
     </section>
 
     <!-- Nos valeurs -->
-    <section id="valeurs" class="bg-white">
+    <section id="valeurs">
         <div class="valeurs-container">
             <h2>Nos valeurs</h2>
             <div class="valeurs-grid">

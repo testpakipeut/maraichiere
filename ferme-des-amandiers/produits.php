@@ -91,14 +91,32 @@ $produits = $stmt->fetchAll(PDO::FETCH_ASSOC);
         const boutons = document.querySelectorAll('[data-filtre]');
         const produits = document.querySelectorAll('.produit');
 
+        // Ajout d'un écouteur de transitionend pour chaque produit
+        produits.forEach(produit => {
+            produit.addEventListener('transitionend', function(e) {
+                if (e.propertyName === 'opacity') {
+                    const nomProduit = produit.querySelector('h2').textContent;
+                    if (produit.classList.contains('hidden')) {
+                        console.log('Transition FINIE (masqué) :', nomProduit);
+                    } else {
+                        console.log('Transition FINIE (affiché) :', nomProduit);
+                    }
+                }
+            });
+        });
+
         boutons.forEach(bouton => {
             bouton.addEventListener('click', function() {
                 const filtre = this.getAttribute('data-filtre');
+                console.log('Filtre sélectionné :', filtre);
                 produits.forEach(produit => {
+                    const nomProduit = produit.querySelector('h2').textContent;
                     if (filtre === 'tous' || produit.getAttribute('data-jour').includes(filtre)) {
                         produit.classList.remove('hidden');
+                        console.log('Affiché (début transition):', nomProduit);
                     } else {
                         produit.classList.add('hidden');
+                        console.log('Masqué (début transition):', nomProduit);
                     }
                 });
             });
